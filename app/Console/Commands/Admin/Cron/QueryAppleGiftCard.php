@@ -43,6 +43,7 @@ class QueryAppleGiftCard extends Command
                 $card->is_checked = 2;
                 $card->save();
             }
+            sleep(2); // 延迟 2 秒
         }
     }
 
