@@ -2,6 +2,7 @@
 
 namespace App\Admin\Controllers;
 
+use App\Admin\Extensions\Tools\AppleRequestParamGuidanceTool;
 use App\Admin\Extensions\Tools\AppleRequestParamTool;
 use App\Admin\Extensions\Tools\ImportTool;
 use App\Admin\Repositories\AppleGiftCard;
@@ -23,6 +24,7 @@ class AppleGiftCardController extends AdminController
             $grid->tools(function (Grid\Tools $tools) {
                 $tools->append(new ImportTool());
                 $tools->append(new AppleRequestParamTool());
+                $tools->append(new AppleRequestParamGuidanceTool());
             });
             $grid->column('id')->sortable();
             $grid->column('gift_card_number');
@@ -76,5 +78,10 @@ class AppleGiftCardController extends AdminController
             $form->display('created_at');
             $form->display('updated_at');
         });
+    }
+
+    protected function guidance()
+    {
+        return '指导';
     }
 }

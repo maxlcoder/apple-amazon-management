@@ -228,5 +228,6 @@ return [
     ],
     'apple' => [
         'request_param' => '苹果请求参数',
+        'request_param_guidance' => '苹果请求参数指导',
     ],
 ];

@@ -15,7 +15,7 @@ class AppleRequestParamForm extends Form
     /**
      * Handle the form request.
      *
-     * @param array $input
+     * @param  array  $input
      *
      * @return mixed
      */
@@ -40,8 +40,9 @@ class AppleRequestParamForm extends Form
         );
 
         return $this
-				->response()
-				->success('Processed successfully.');
+            ->response()
+            ->success('Processed successfully.')
+            ->refresh();
     }
 
     /**
@@ -49,7 +50,7 @@ class AppleRequestParamForm extends Form
      */
     public function form()
     {
-        $this->text('domain')->required();
+        $this->text('domain', '域名')->required();
         $this->text('x-aos-stk')->required();
         $this->text('dssid2', 'dssid2')->required();
         $this->text('as_disa', 'as_disa')->required();

@@ -23,6 +23,6 @@ class ImportTool extends AbstractTool
             ->title($title = trans('admin.import'))
             ->body(ImportForm::make())
             ->button("<button class='btn btn-primary'><i class=\"feather icon-folder\"></i> &nbsp;{$title}</button> &nbsp;");
-
+        
     }
 }
